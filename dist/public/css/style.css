@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.apresentacao-conteudo_login{
+    display: flex;
+    align-items: center;
+   
+
+
+}
+
+
+.imagem_login{
+    width: 500px;   
+}
+
+.container-cadastro{
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+}
