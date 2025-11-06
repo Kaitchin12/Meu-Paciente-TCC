@@ -1,0 +1,194 @@
+/* reset / base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+  background: #6b8465; /* verde oliva suave */
+  color: #1f3d1f; /* verde escuro para contraste */
+}
+
+/* layout principal */
+.apresentacao-conteudo_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* bloco completo (form + imagem) */
+.bloco-login {
+  display: flex;
+  flex-direction: row;
+  background: #f0f7f0; /* fundo verde bem claro */
+  border-radius: 20px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 850px;
+  height: 500px;
+}
+
+/* caixa do formulário */
+.container-cadastro {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* logo e título */
+.logo_login { width: 130px; margin-bottom: 18px; }
+h2 { color: #1f3d1f; margin-bottom: 14px; }
+
+/* formulário */
+form { width: 100%; display:flex; flex-direction:column; gap:12px; }
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #b6cbb6; /* borda verde clara */
+  font-size: 15px;
+  outline: none;
+  background-color: #ffffff;
+  color: #1f3d1f;
+}
+
+input:focus {
+  border-color: #5b8c5b; /* verde médio */
+  box-shadow: 0 0 0 4px rgba(91, 140, 91, 0.2);
+}
+
+/* botão */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #b6e388; /* verde-limão claro */
+  color: #0f260f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+}
+
+button:hover {
+  background: #a9da7d;
+  transform: scale(1.02);
+}
+
+/* imagem lateral */
+.imagem_login {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Efeito de fusão com o fundo */
+  mix-blend-mode: multiply;
+  filter: brightness(1.05) contrast(1.1) saturate(1.1);
+  opacity: 0.95;
+
+  /* borda leve para dar acabamento */
+  border-left: 3px solid #b6e388;
+}
+
+
+/* mensagens e links */
+.mensagem {
+  margin-top: 10px;
+  min-height: 18px;
+  color: #c0392b;
+  text-align: center;
+}
+
+.link-aux {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #355e35;
+}
+
+.link-aux a {
+  color: #0f260f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-aux a:hover {
+  text-decoration: underline;
+}
+
+/* responsividade */
+@media (max-width: 900px) {
+  .bloco-login {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .container-cadastro {
+    width: 100%;
+    padding: 22px;
+  }
+
+  .imagem_login {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+
+/* ===========================================
+   PERFIL DO USUÁRIO
+   =========================================== */
+body.perfil {
+  background-color: #d9f7d5; /* verde claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-perfil {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 500px;
+  padding: 40px;
+  text-align: center;
+}
+
+.container-perfil h2 {
+  color: #2e7d32;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+#dadosUsuario {
+  background-color: #f2fff0;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: inset 0 0 6px rgba(46,125,50,0.1);
+  color: #333;
+}
+
+#dadosUsuario p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+button#sair {
+  margin-top: 25px;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button#sair:hover {
+  background-color: #2e7d32;
+}
