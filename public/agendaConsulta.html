@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta | Meu Paciente</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/marcarConsulta.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>Meu Paciente</span>
+            </div>
+            <nav class="nav-links">
+                <a href="home.html">Início</a>
+                <a href="#" class="active">Agendar</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-ghost">logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container booking-wrapper">
+            
+            <div class="booking-card animate-up">
+                <div class="card-sidebar">
+                    <div class="sidebar-content">
+                        <h2>Sua saúde em<br>primeiro lugar.</h2>
+                        <p>Agende com os melhores especialistas da região em menos de 2 minutos.</p>
+                        
+                        <div class="feature-pills">
+                            <div class="pill"><i class="fa-solid fa-shield-halved"></i> Dados Seguros</div>
+                            <div class="pill"><i class="fa-solid fa-clock"></i> Rápido</div>
+                        </div>
+                    </div>
+                    
+                    <div class="abstract-shape"></div>
+                </div>
+
+                <div class="card-form">
+                    <div class="form-header">
+                        <h3>Nova Consulta</h3>
+                        <p>Preencha os dados para prosseguir</p>
+                    </div>
+
+                    <form>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="nome">Nome Completo</label>
+                                <div class="input-box">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="nome" placeholder="Ex: João Silva" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="telefone">WhatsApp</label>
+                                <div class="input-box">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="especialidade">Especialidade</label>
+                                <div class="input-box">
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                    <select id="especialidade" required>
+                                        <option value="" selected disabled>Selecione...</option>
+                                        <option value="cg">Clínico Geral</option>
+                                        <option value="cardio">Cardiologia</option>
+                                        <option value="derma">Dermatologia</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down arrow-select"></i>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="data">Data Preferencial</label>
+                                <div class="input-box">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <input type="date" id="data" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="motivo">Motivo (Opcional)</label>
+                            <div class="input-box">
+                                <textarea id="motivo" rows="3" placeholder="Ex: Dor de cabeça frequente..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Solicitar Agendamento <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2024 Meu Paciente - Tecnologia em Saúde.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

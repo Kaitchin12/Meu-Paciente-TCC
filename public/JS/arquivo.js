@@ -34,7 +34,7 @@ if (formLogin) {
 
     if (resultado.token) {
       localStorage.setItem('token', resultado.token);
-      window.location.href = 'perfil.html';
+      window.location.href = 'home.html';
     } else {
       document.getElementById('mensagem').textContent = resultado.erro;
     }
