@@ -1,0 +1,289 @@
+/* --- Variáveis e Reset (Baseado na sua identidade) --- */
+:root {
+    --primary: #00b4d8;
+    --primary-dark: #0096c7;
+    --primary-light: #caf0f8;
+    --text-dark: #1e293b;
+    --text-gray: #64748b;
+    --surface: #ffffff;
+    --bg-body: #f1f5f9;
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --shadow-soft: 0 20px 60px -10px rgba(0, 180, 216, 0.15);
+    --shadow-card: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* --- Fundo Decorativo (Blob) --- */
+.bg-decoration {
+    position: fixed;
+    top: -10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,180,216,0.15) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- Navbar Minimalista --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+.logo span { color: var(--text-dark); }
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.doctor-badge {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-logout {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: var(--text-gray);
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.btn-logout:hover {
+    background: #fee2e2;
+    color: #ef4444;
+    border-color: #fecaca;
+}
+
+/* --- Container Principal --- */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 120px; /* Navbar height + space */
+    padding-bottom: 50px;
+    padding-left: 5%; padding-right: 5%;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 750px;
+}
+
+.header-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    color: var(--text-dark);
+}
+
+.header-text p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+/* --- Card "Estonteante" (Prescription Card) --- */
+.prescription-card {
+    background: var(--surface);
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalhe de topo colorido */
+.prescription-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary), #48cae4);
+}
+
+.label-heading {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-gray);
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* --- Inputs e Selects Customizados --- */
+.select-wrapper {
+    position: relative;
+}
+
+select, input, textarea {
+    width: 100%;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    appearance: none; /* Remove estilo padrão do browser */
+}
+
+/* Ícone da seta do select customizado */
+.arrow-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-gray);
+    pointer-events: none;
+    font-size: 0.8rem;
+}
+
+/* Estados de Foco (A mágica acontece aqui) */
+select:focus, input:focus, textarea:focus {
+    background: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.1);
+    transform: translateY(-2px);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.6;
+}
+
+.divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin: 30px 0;
+}
+
+.form-grid {
+    display: grid;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.input-group label i {
+    color: var(--primary);
+    margin-right: 6px;
+}
+
+/* --- Footer do Form e Botão --- */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.status-indicator {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px; height: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 180, 216, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(-1px);
+}
+
+/* --- Animação de Entrada --- */
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-up {
+    animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .prescription-card { padding: 30px 20px; }
+    .form-footer { flex-direction: column; gap: 20px; }
+    .btn-submit { width: 100%; justify-content: center; }
+    .header-text h1 { font-size: 2rem; }
+}

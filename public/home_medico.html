@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Médico | Meu Paciente</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/medico-home.css">
+</head>
+<body>
+
+    <div class="blob-bg"></div>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-heart-pulse"></i> Meu<span>Paciente</span>
+        </div>
+        <div class="user-menu">
+            <div class="user-info">
+                <span class="greeting">Olá, Dr(a).</span>
+                <strong id="nomeMedico">Carregando...</strong>
+            </div>
+            <button onclick="logout()" class="btn-icon" title="Sair">
+                <i class="fa-solid fa-power-off"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="dashboard-container animate-up">
+        
+        <section class="welcome-banner">
+            <div class="banner-content">
+                <h1>Painel Clínico</h1>
+                <p>Gerencie seus pacientes e prescrições com inteligência e agilidade.</p>
+            </div>
+            <div class="banner-icon">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="icon-box blue">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div>
+                    <h3>Pacientes</h3>
+                    <p>Total Cadastrado</p>
+                </div>
+                <span class="value">Active</span>
+            </div>
+            <div class="stat-card">
+                <div class="icon-box purple">
+                    <i class="fa-solid fa-file-prescription"></i>
+                </div>
+                <div>
+                    <h3>Prescrições</h3>
+                    <p>Emitidas este mês</p>
+                </div>
+                <span class="value">+12</span>
+            </div>
+            <div class="stat-card">
+                <div class="icon-box green">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+                <div>
+                    <h3>Plantão</h3>
+                    <p>Status atual</p>
+                </div>
+                <span class="value on">ON</span>
+            </div>
+        </section>
+
+        <h2 class="section-title">Acesso Rápido</h2>
+        <section class="actions-grid">
+            
+            <a href="prescricao.html" class="action-card primary-action">
+                <div class="card-content">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <h3>Nova Prescrição</h3>
+                    <p>Criar exame ou receita para paciente</p>
+                </div>
+                <div class="card-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <div class="action-card secondary-action">
+                <div class="card-content">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </div>
+                    <h3>Histórico de Exames</h3>
+                    <p>Visualizar solicitações anteriores</p>
+                </div>
+            </div>
+
+            <div class="action-card secondary-action">
+                <div class="card-content">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3>Minha Agenda</h3>
+                    <p>Próximas consultas confirmadas</p>
+                </div>
+            </div>
+
+        </section>
+
+        <h2 class="section-title">Atividade Recente</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Ação</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar">JM</div> Julia Mendes</div></td>
+                        <td>Hemograma Completo</td>
+                        <td>Hoje, 10:30</td>
+                        <td><span class="badge success">Enviado</span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="user-cell"><div class="avatar color-2">RA</div> Roberto Alves</div></td>
+                        <td>Raio-X Tórax</td>
+                        <td>Ontem, 16:45</td>
+                        <td><span class="badge success">Enviado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="js/medico-home.js"></script>
+</body>
+</html>

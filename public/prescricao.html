@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Médica | Prescrição Digital</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/prescricao.css">
+</head>
+<body>
+
+    <div class="bg-decoration"></div>
+
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-heart-pulse"></i> Meu<span>Paciente</span>
+        </div>
+        <div class="user-profile">
+            <div class="doctor-badge">
+                <i class="fa-solid fa-user-doctor"></i> Dr(a). Conectado
+            </div>
+            <button onclick="logout()" class="btn-logout" title="Sair">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-wrapper animate-up">
+            
+            <div class="header-text">
+                <h1>Nova Prescrição</h1>
+                <p>Gerencie exames e crie solicitações médicas com agilidade e segurança.</p>
+            </div>
+
+            <div class="prescription-card">
+                <form id="formCriarExame">
+                    
+                    <div class="form-section">
+                        <label for="pacienteSelect" class="label-heading">
+                            <i class="fa-solid fa-hospital-user"></i> Selecionar Paciente
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="pacienteSelect" required>
+                                <option value="" disabled selected>Busque ou selecione um paciente...</option>
+                                </select>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="nomeExame">
+                                <i class="fa-solid fa-microscope"></i> Nome do Exame
+                            </label>
+                            <input type="text" id="nomeExame" placeholder="Ex: Hemograma, Ressonância..." required>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="remedios">
+                            <i class="fa-solid fa-prescription-bottle-medical"></i> Medicamentos & Instruções
+                        </label>
+                        <textarea id="remedios" placeholder="Descreva a posologia, preparo necessário ou observações clínicas importantes..."></textarea>
+                    </div>
+
+                    <div class="form-footer">
+                        <div class="status-indicator">
+                            <span class="dot"></span> Sistema Seguro
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            Emitir Solicitação <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/medico.js"></script>
+</body>
+</html>
