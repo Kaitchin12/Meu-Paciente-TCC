@@ -2,7 +2,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
-  background: #6b8465; /* verde oliva suave */
+  background: #00b4d8; /* verde oliva suave */
   color: #1f3d1f; /* verde escuro para contraste */
 }
 
@@ -55,7 +55,7 @@ input {
 }
 
 input:focus {
-  border-color: #5b8c5b; /* verde médio */
+  border-color: #00b4d8; /* verde médio */
   box-shadow: 0 0 0 4px rgba(91, 140, 91, 0.2);
 }
 
@@ -65,7 +65,7 @@ button {
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background: #b6e388; /* verde-limão claro */
+  background: #00b4d8; /* verde-limão claro */
   color: #0f260f;
   font-weight: 600;
   cursor: pointer;
@@ -73,7 +73,7 @@ button {
 }
 
 button:hover {
-  background: #a9da7d;
+  background: #00b4d8;
   transform: scale(1.02);
 }
 
@@ -89,7 +89,7 @@ button:hover {
   opacity: 0.95;
 
   /* borda leve para dar acabamento */
-  border-left: 3px solid #b6e388;
+  border-left: 3px solid #00b4d8;
 }
 
 
