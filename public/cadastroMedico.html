@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credenciamento Médico</title>
+  <link rel="stylesheet" href="css/syleMedico.css">
+</head>
+<body>
+  <main>
+    <section class="apresentacao-conteudo_login">
+      <div class="bloco-login">
+
+        <div class="container-cadastro">  
+          <img class="logo_login" src="imagens/logo.png" alt="Logo Meu Paciente">
+          <h2>Credenciamento</h2>
+          
+          <form id="formCadastroMedico" enctype="multipart/form-data">
+            <input type="text" id="nome" name="nome" placeholder="Nome Completo e Título" required>
+            <input type="text" id="atuacao" name="atuacao" placeholder="Especialidade (ex: Cardiologia)" required>
+            
+            <label class="label-upload" for="certificado">Foto do CRM/Certificado:</label>
+            <input type="file" id="certificado" name="certificado" accept="image/*, application/pdf" required>
+
+            <input type="email" id="email" name="email" placeholder="E-mail profissional" required>
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha segura" required>
+            
+            <button type="submit">Solicitar Aprovação</button>
+          </form>
+
+          <p class="link-aux">Já é credenciado? <a href="login-medico.html">Entrar</a></p>
+          <p id="mensagem" class="mensagem"></p>
+        </div>
+
+        <img class="imagem_login" src="https://static.vecteezy.com/system/resources/thumbnails/050/817/819/small/happy-smiling-male-doctor-with-hand-present-something-empty-space-standing-isolate-on-transparent-background-png.png" alt="Imagem ilustrativa medicina">
+      </div>
+    </section>
+  </main>
+   <script src="JS/arquivo.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Médico - Meu Paciente</title>
+  <link rel="stylesheet" href="css/syleMedico.css">
+</head>
+<body>
+  <main>
+    <section class="apresentacao-conteudo_login">
+      <div class="bloco-login">
+        
+        <div class="container-cadastro">  
+          <img class="logo_login" src="imagens/logo.png" alt="Logo Meu Paciente">
+          <h2>Área do Médico</h2>
+          
+          <form id="formLoginMedico">
+            <input type="email" id="email" name="email" placeholder="E-mail profissional" required>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required>
+            <button type="submit">Acessar Painel</button>
+          </form>
+
+          <p class="link-aux">É médico e não tem conta? <a href="cadastroMedico.html">Credencie-se</a></p>
+          <p class="link-aux"><a href="login.html">Sou Paciente</a></p>
+          <p id="mensagem" class="mensagem"></p>
+        </div>
+
+        <img class="imagem_login" src="imagens/medica.png" alt="Imagem ilustrativa medicina">
+      </div>
+    </section>
+  </main>
+   <script src="JS/arquivo.js"></script>
+</body>
+</html>

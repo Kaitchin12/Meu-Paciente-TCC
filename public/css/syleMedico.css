@@ -1,0 +1,264 @@
+/* ===========================================
+   RESET / BASE
+   =========================================== */
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+  background: #00b4d8; /* verde oliva suave */
+  color: #1f3d1f; /* verde escuro para contraste */
+}
+
+/* ===========================================
+   LAYOUT PRINCIPAL (LOGIN E CADASTRO)
+   =========================================== */
+.apresentacao-conteudo_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Pequeno espaçamento para telas menores não colarem na borda */
+}
+
+/* Bloco completo (form + imagem) */
+.bloco-login {
+  display: flex;
+  flex-direction: row;
+  background: #f0f7f0; /* fundo verde bem claro */
+  border-radius: 20px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 850px;
+  /* Removemos a altura fixa (height: 500px) para o bloco crescer 
+     conforme o conteúdo (útil para o cadastro de médico que é maior) */
+  min-height: 500px; 
+}
+
+/* Caixa do formulário */
+.container-cadastro {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo e Títulos */
+.logo_login { 
+  width: 130px; 
+  margin-bottom: 18px; 
+}
+
+h2 { 
+  color: #1f3d1f; 
+  margin-bottom: 14px; 
+  text-align: center;
+}
+
+/* ===========================================
+   FORMULÁRIO E INPUTS
+   =========================================== */
+form { 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
+
+/* Inputs de Texto Padrão */
+input:not([type="file"]) {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #b6cbb6; /* borda verde clara */
+  font-size: 15px;
+  outline: none;
+  background-color: #ffffff;
+  color: #1f3d1f;
+}
+
+input:focus {
+  border-color: #00b4d8; /* verde médio */
+  box-shadow: 0 0 0 4px rgba(91, 140, 91, 0.2);
+}
+
+/* Estilo Especial para o Upload de Arquivo (Certificado) */
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px dashed #b6cbb6; /* Borda tracejada para indicar área de arquivo */
+  background-color: #f9fff9;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Label para identificar o campo de arquivo */
+.label-upload {
+  font-size: 13px;
+  color: #1f3d1f;
+  margin-bottom: -8px; /* Puxa um pouco para perto do input */
+  margin-left: 4px;
+  font-weight: 600;
+  align-self: flex-start; /* Alinha o texto à esquerda */
+}
+
+/* Botão Principal */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #00b4d8; /* verde-limão claro */
+  color: #0f260f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+  margin-top: 5px;
+}
+
+button:hover {
+  background: #00b4d8;
+  transform: scale(1.02);
+}
+
+/* ===========================================
+   IMAGEM LATERAL
+   =========================================== */
+.imagem_login {
+  width: 50%;
+  /* Como removemos o height fixo do pai, aqui usamos min-height para garantir */
+  min-height: 500px; 
+  object-fit: cover;
+
+  /* Efeito de fusão com o fundo */
+  mix-blend-mode: multiply;
+  filter: brightness(1.05) contrast(1.1) saturate(1.1);
+  opacity: 0.95;
+
+  /* borda leve para dar acabamento */
+  border-left: 3px solid #00b4d8;
+}
+
+/* ===========================================
+   MENSAGENS E LINKS AUXILIARES
+   =========================================== */
+.mensagem {
+  margin-top: 10px;
+  min-height: 18px;
+  font-size: 14px;
+  color: #c0392b; /* Vermelho para erro */
+  text-align: center;
+}
+
+/* Classe utilitária caso queira mensagem de sucesso */
+.mensagem.sucesso {
+  color: #27ae60;
+}
+
+.link-aux {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #355e35;
+  text-align: center;
+}
+
+.link-aux a {
+  color: #0f260f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-aux a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================================
+   RESPONSIVIDADE (MOBILE)
+   =========================================== */
+@media (max-width: 900px) {
+  .bloco-login {
+    flex-direction: column-reverse; /* Inverte: Imagem em cima ou embaixo dependendo do gosto. */
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  /* Ajuste para imagem ficar no topo em mobile (opcional, se quiser imagem embaixo tire o column-reverse) */
+  .container-cadastro {
+    width: 100%;
+    padding: 30px 22px;
+  }
+
+  .imagem_login {
+    width: 100%;
+    height: 200px; /* Altura fixa para imagem não ocupar tela toda no celular */
+    min-height: auto;
+    border-left: none;
+    border-bottom: 3px solid #00b4d8;
+  }
+}
+
+/* ===========================================
+   PERFIL DO USUÁRIO
+   =========================================== */
+body.perfil {
+  background-color: #d9f7d5; /* verde claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-perfil {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 500px;
+  padding: 40px;
+  text-align: center;
+  margin: 20px; /* Margem para não colar em telas pequenas */
+}
+
+.container-perfil h2 {
+  color: #2e7d32;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+#dadosUsuario {
+  background-color: #f2fff0;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: inset 0 0 6px rgba(46,125,50,0.1);
+  color: #333;
+}
+
+#dadosUsuario p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  word-break: break-word; /* Para emails longos não quebrarem o layout */
+}
+
+button#sair {
+  margin-top: 25px;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button#sair:hover {
+  background-color: #2e7d32;
+}

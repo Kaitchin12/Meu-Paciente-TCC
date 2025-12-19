@@ -26,7 +26,7 @@ const pool = mysql.createPool({
 
 // ROTA: Página inicial (login)
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "login.html"));
+  res.sendFile(path.join(__dirname, "public", "pre-login.html"));
 });
 
 
